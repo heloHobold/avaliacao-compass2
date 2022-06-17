@@ -10,5 +10,7 @@
 - Na classe de execução: repetição de código, falta polimorfismo, métodos
 
 ### Questão 2 -> falta a paginação
+- Uma paginação improvisada separando os filmes em duas tabelas?
 
-### Questão 3
+### Questão 3 -> funcionante hehe
+- ps: talvez precise de uma exeçãozinha 
