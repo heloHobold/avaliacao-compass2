@@ -80,8 +80,3 @@ public class TestaQuestao1 {
         System.out.println("\nAplicação encerrada!");
     }
 }
-
-//for (Produto p : produtoDAO.listarProdutos()){
-//        System.out.println(p.getId() + " | " + p.getNome() + ", descrição: " + p.getDescricao() + ", quantidade: " +
-//        ", preço: "+ p.getPreco());
-//        }

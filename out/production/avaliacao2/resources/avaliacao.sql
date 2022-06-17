@@ -58,6 +58,3 @@ INSERT INTO filme (nome, descricao, ano) VALUES
 ('Ratatouille', 'Comédia/Infantil', '2007'),
 ('Interestelar', 'Ficção científica/Aventura', '2014'),
 ('Até o Último Homem', 'Guerra/Drama', '2016');
-
-SELECT * FROM produto;
-SELECT * FROM filme;

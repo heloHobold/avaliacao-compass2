@@ -5,7 +5,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private int quantidade;
-    private double preco; // verificar diferença entre double e float em Java
+    private double preco;
 
     public Integer getId() {
         return id;
