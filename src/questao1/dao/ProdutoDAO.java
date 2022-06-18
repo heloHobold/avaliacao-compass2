@@ -8,8 +8,9 @@ import java.sql.PreparedStatement;
 public class ProdutoDAO {
 
     public void salvar(Produto produto) {
-        String sql = "INSERT INTO produto (nome, descricao, quantidade, preco)" +
-                "VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO produto (nome, descricao, quantidade, preco) VALUES (?, ?, ?, ?)," +
+                "('Teclado', 'Teclado mecânico RGB', 10, '212.99')," +
+                "('Monitor', 'Monitor LG 27´´', 4, 1380.89)";
 
         Connection conn = null;
         PreparedStatement pstm = null;

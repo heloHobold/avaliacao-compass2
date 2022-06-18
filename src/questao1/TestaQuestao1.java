@@ -21,26 +21,12 @@ public class TestaQuestao1 {
         while (opcao != 0){
             switch (opcao) {
                 case 1: // -> e se o usuário escolher essa opção várias vezes? Os dados serão duplicados!
-                    Produto produto1 = new Produto();
-                    produto1.setNome("Mouse");
-                    produto1.setDescricao("Mouse sem fio");
-                    produto1.setQuantidade(12);
-                    produto1.setPreco(135.90);
-                    produtoDAO.salvar(produto1);
-
-                    Produto produto2 = new Produto();
-                    produto2.setNome("Teclado");
-                    produto2.setDescricao("Teclado mecânico RGB");
-                    produto2.setQuantidade(10);
-                    produto2.setPreco(212.99);
-                    produtoDAO.salvar(produto2);
-
-                    Produto produto3 = new Produto();
-                    produto3.setNome("Monitor");
-                    produto3.setDescricao("Monitor LG 27´´");
-                    produto3.setQuantidade(4);
-                    produto3.setPreco(1380.89);
-                    produtoDAO.salvar(produto3);
+                    Produto produto = new Produto();
+                    produto.setNome("Mouse");
+                    produto.setDescricao("Mouse sem fio");
+                    produto.setQuantidade(12);
+                    produto.setPreco(135.90);
+                    produtoDAO.salvar(produto);
 
                     System.out.println("\nInserção realizada!\n"); // -> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
                     System.out.println("Escolha uma outra opção!"); // -> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
