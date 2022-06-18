@@ -1,7 +1,5 @@
 package questao3;
 
-import com.mysql.cj.util.StringUtils;
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
