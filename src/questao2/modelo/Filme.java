@@ -1,9 +1,5 @@
 package questao2.modelo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-
 public class Filme {
     private Integer id;
     private String nome;

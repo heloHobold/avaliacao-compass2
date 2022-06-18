@@ -15,9 +15,7 @@ public class TestaQuestao2 {
         System.out.println("Informe o número da página você deseja acessar: ");
         int pagina = leia.nextInt();
 
-        FilmeDAO filmeDAO = new FilmeDAO();
-
-        for (Filme f : FilmeDAO.filtarFilmes(qtdFilmes)){
+        for (Filme f : FilmeDAO.filtrarFilmes(qtdFilmes, pagina)){
         System.out.println(f.getId() + " | " + f.getNome() + ", descrição: " + f.getDescricao() + ", ano: " + f.getAno());
         }
 

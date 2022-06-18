@@ -1,7 +1,6 @@
 package questao2.dao;
 
 import factory.ConnectionFactory;
-import questao2.TestaQuestao2;
 import questao2.modelo.Filme;
 
 import java.sql.Connection;
@@ -12,8 +11,12 @@ import java.util.List;
 
 public class FilmeDAO {
 
-    public static List<Filme> filtarFilmes(int qtdFilmes) {
-        String sql = "SELECT * FROM filme LIMIT ?";
+    public static List<Filme> filtrarFilmes(int qtdFilmes, int pagina) {
+
+        int comecoPagina;
+        int fimPagina;
+
+        String sql= "SELECT * FROM filme WHERE id > ? AND id <= ? LIMIT ?";
 
         List<Filme> filmes = new ArrayList<Filme>();
 
@@ -23,23 +26,42 @@ public class FilmeDAO {
         ResultSet rst = null;
 
         try {
-            conn = ConnectionFactory.criarConexao();
+            if (pagina > 0 && pagina <= 4) {
+                if (pagina == 1){
+                    comecoPagina = 0;
+                    fimPagina = 10;
+                } else if (pagina == 2) {
+                    comecoPagina = 10;
+                    fimPagina = 20;
+                } else if (pagina == 3) {
+                    comecoPagina = 20;
+                    fimPagina = 30;
+                } else {
+                    comecoPagina = 30;
+                    fimPagina = 40;
+                }
 
-            pstm = conn.prepareStatement(sql);
+                conn = ConnectionFactory.criarConexao();
 
-            pstm.setInt(1, qtdFilmes);
+                pstm = conn.prepareStatement(sql);
+                pstm.setInt(1, comecoPagina);
+                pstm.setInt(2, fimPagina);
+                pstm.setInt(3, qtdFilmes);
 
-            rst = pstm.executeQuery();
+                rst = pstm.executeQuery();
 
-            while (rst.next()){
-                Filme filme = new Filme();
+                while (rst.next()) {
+                    Filme filme = new Filme();
 
-                filme.setId(rst.getInt("id"));
-                filme.setNome(rst.getString("nome"));
-                filme.setDescricao(rst.getString("descricao"));
-                filme.setAno(rst.getString("ano"));
+                    filme.setId(rst.getInt("id"));
+                    filme.setNome(rst.getString("nome"));
+                    filme.setDescricao(rst.getString("descricao"));
+                    filme.setAno(rst.getString("ano"));
 
-                filmes.add(filme);
+                    filmes.add(filme);
+                }
+            } else {
+                System.out.println("Número de página inválido! Tente páginas de 1 a 4!");
             }
         } catch (Exception e){
             e.printStackTrace();
