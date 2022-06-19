@@ -5,4 +5,4 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#### Obs: não consegui implementar corretamente a questão 1. Acontece que a lógica requisitada na questão só funciona corretamente em partes. Desculpa! =(
+#### Obs: não consegui implementar corretamente a questão 1. Acontece que só consequi fazer com que a lógica requisitada na questão funcionasse corretamente em partes. Desculpa! =(
