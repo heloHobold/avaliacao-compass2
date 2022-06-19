@@ -1,6 +1,7 @@
 package questao2.dao;
 
 import factory.ConnectionFactory;
+import questao2.exception.PaginaInvalida;
 import questao2.modelo.Filme;
 
 import java.sql.Connection;
@@ -48,6 +49,11 @@ public class FilmeDAO {
                 pstm.setInt(2, fimPagina);
                 pstm.setInt(3, qtdFilmes);
 
+                if (qtdFilmes > 10){
+                    System.out.println("Você deseja ver um número de filmes maior do que os contidos na página!" +
+                            " Não se preocupe vou te mostrar todos os possíveis!\n");
+                }
+
                 rst = pstm.executeQuery();
 
                 while (rst.next()) {
@@ -61,7 +67,7 @@ public class FilmeDAO {
                     filmes.add(filme);
                 }
             } else {
-                System.out.println("Número de página inválido! Tente páginas de 1 a 4!");
+                throw new PaginaInvalida("Número de página inválido! Tente números de 1 a 4!");
             }
         } catch (Exception e){
             e.printStackTrace();
