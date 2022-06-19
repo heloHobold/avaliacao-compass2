@@ -20,45 +20,29 @@ public class TestaQuestao1 {
 
         while (opcao != 0){
             switch (opcao) {
-                case 1: // -> e se o usuário escolher essa opção várias vezes? Os dados serão duplicados!
-                    Produto produto = new Produto();
-                    produto.setNome("Mouse");
-                    produto.setDescricao("Mouse sem fio");
-                    produto.setQuantidade(12);
-                    produto.setPreco(135.90);
-                    produtoDAO.salvar(produto);
-
-                    System.out.println("\nInserção realizada!\n"); // -> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
-                    System.out.println("Escolha uma outra opção!"); // -> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
-
+                case 1:
+                    produtoDAO.inserir3ProdutosAleatorios();
+                    System.out.println("Escolha uma outra opção!");
                     break;
 
-                case 2: // -> O que fazer quando ainda não tiver nada inserido no banco?
-
+                case 2:
                     Produto p1 = new Produto();
-                    p1.setNome("Luminária");
-                    p1.setDescricao("Luminária de mesa articulada");
+                    p1.setNome("Monitor");
+                    p1.setDescricao("Monitor SAMSUNG curvo");
                     p1.setQuantidade(5);
-                    p1.setPreco(99.90);
-
+                    p1.setPreco(1500.00);
                     p1.setId(1);
-
                     produtoDAO.alterar(p1);
-
-                    System.out.println("Escolha uma outra opção!"); //-> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
-
+                    System.out.println("Escolha uma outra opção!");
                     break;
 
                 case 3:
-
                     produtoDAO.deletar(2);
-
-                    System.out.println("Escolha uma outra opção!"); // -> em caso de erro na execução desse caso isso ainda será mostrado no console - Exceções?
-
+                    System.out.println("Escolha uma outra opção!");
                     break;
 
                 default:
-                    System.out.println("\nOpção inválida! Escolha uma opção válida!"); // -> uma exception para tratar da entrade de strings?
+                    System.out.println("\nOpção inválida! Escolha uma opção válida!");
                     break;
             }
             opcao = leia.nextInt();

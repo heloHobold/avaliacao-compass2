@@ -1,7 +1,7 @@
 package questao1.modelo;
 
 public class Produto {
-    private Integer id;
+    private  Integer id;
     private String nome;
     private String descricao;
     private int quantidade;

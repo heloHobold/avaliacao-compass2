@@ -1,12 +1,8 @@
-# Repositório com as respostas da avaliação - Sprint 2
+## Banco de dados 
 
-- Vai usar pool de conexões?
-- Aplicar exeções e polimorfismo
+#### Usuário: root
+#### Senha: data
 
-### Questão 1 -> funciona, mas com problemas
-- Ainda tem muitos erros de execução que podem ser ocasionados
-- Na classe de execução: repetição de código, falta polimorfismo, métodos
+---------------------------------------------------------------------------
 
-### Questão 2 -> funcionante
-
-### Questão 3 -> funcionante hehe
+#### Obs: não consegui implementar corretamente a questão 1. Desculpa! 

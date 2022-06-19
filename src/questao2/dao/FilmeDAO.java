@@ -67,7 +67,7 @@ public class FilmeDAO {
                     filmes.add(filme);
                 }
             } else {
-                throw new PaginaInvalida("Número de página inválido! Tente números de 1 a 4!");
+                throw new PaginaInvalida("Número de página inválido! Tente páginas de 1 a 4!");
             }
         } catch (Exception e){
             e.printStackTrace();

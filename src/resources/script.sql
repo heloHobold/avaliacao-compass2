@@ -1,6 +1,6 @@
-CREATE DATABASE avaliacao;
+CREATE DATABASE avaliacaoCompass2;
 
-USE avaliacao;
+USE avaliacaoCompass2;
 
 CREATE TABLE produto(
 ID INT AUTO_INCREMENT ,
