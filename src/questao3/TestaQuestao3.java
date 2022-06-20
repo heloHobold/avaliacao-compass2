@@ -20,7 +20,7 @@ public class TestaQuestao3 {
             while (d.find()) quantidadeDivertido++;
             Matcher c = Pattern.compile("(chateado)",Pattern.DOTALL).matcher(mensagem);
             int quantidadeChateado = 0;
-            while (c.find()) quantidadeDivertido++;
+            while (c.find()) quantidadeChateado++;
 
             if (quantidadeDivertido > quantidadeChateado){
                 System.out.println("Divertido!");
