@@ -6,6 +6,7 @@ import questao1.modelo.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import java.sql.ResultSet;
 import java.util.Random;
 
 public class ProdutoDAO {
@@ -63,7 +64,7 @@ public class ProdutoDAO {
         }
     }
 
-    public void alterar (Produto produto) { // -> só funciona uma vez
+    public void alterar (Produto produto) {
 
 
         String sql = "UPDATE produto SET nome = ?, descricao = ?, quantidade = ?, preco = ?" +
@@ -81,7 +82,7 @@ public class ProdutoDAO {
             pstm.setInt(3, produto.getQuantidade());
             pstm.setDouble(4, produto.getPreco());
 
-            pstm.setInt(5, produto.getId());
+            pstm.setInt(5, (getUltimoId()-2));
 
             pstm.execute();
             System.out.println("\nAtualização realizada!\n");
@@ -103,7 +104,7 @@ public class ProdutoDAO {
         }
     }
 
-    public void deletar (int id) { // -> só funciona uma vez
+    public void deletar () {
 
         String sql = "DELETE FROM produto WHERE id = ?";
 
@@ -115,7 +116,7 @@ public class ProdutoDAO {
 
             pstm = conn.prepareStatement(sql);
 
-            pstm.setInt(1, id);
+            pstm.setInt(1, (getUltimoId()-1));
 
             pstm.execute();
             System.out.println("\nExclução realizada!\n");
@@ -135,5 +136,44 @@ public class ProdutoDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    public int getUltimoId(){
+        String sql = "SELECT MAX(id) AS id FROM produto";
+
+        int idFinal = 0;
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+
+        try{
+            conn = ConnectionFactory.criarConexao();
+            pstm = conn.prepareStatement(sql);
+            rst = pstm.executeQuery();
+            while(rst.next()) {
+                idFinal = rst.getInt("id");
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rst != null){
+                    rst.close();
+                }
+
+                if (pstm != null){
+                    pstm.close();
+                }
+
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return idFinal;
     }
 }

@@ -37,7 +37,7 @@ public class TestaQuestao1 {
                     break;
 
                 case 3:
-                    produtoDAO.deletar(2);
+                    produtoDAO.deletar();
                     System.out.println("Escolha uma outra opção!");
                     break;
 
