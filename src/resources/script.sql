@@ -3,31 +3,29 @@ CREATE DATABASE avaliacaoCompass2;
 USE avaliacaoCompass2;
 
 CREATE TABLE produto(
-ID INT AUTO_INCREMENT ,
-NOME VARCHAR(80),
-DESCRICAO VARCHAR(150),
-QUANTIDADE INT,
-PRECO FLOAT,
+ID INT AUTO_INCREMENT NOT NULL,
+NOME VARCHAR(80) NOT NULL,
+DESCRICAO VARCHAR(150) NOT NULL,
+QUANTIDADE INT NOT NULL,
+PRECO FLOAT NOT NULL,
 PRIMARY KEY (ID));
 
-SELECT * FROM produto;
-
 CREATE TABLE filme(
-ID INT AUTO_INCREMENT ,
-NOME VARCHAR(80),
+ID INT AUTO_INCREMENT NOT NULL,
+NOME VARCHAR(80)NOT NULL,
 DESCRICAO VARCHAR(150),
-ANO varchar(4),
+ANO varchar(4) NOT NULL,
 PRIMARY KEY (ID));
 
 INSERT INTO filme (nome, descricao, ano) VALUES
 ('IT A Coisa', 'Terror/Thriller ', '2017'),
 ('Jogada de Mestre', 'Crime/Drama', '2015'),
 ('Duna', 'Ficção científica/Aventura', '2021'),
-('Fragmentado', 'Thriller/Terror', 2016),
+('Fragmentado', 'Thriller/Terror', '2016'),
 ('O Menino Que Descobriu o Vento', 'Drama', '2019'),
-('Logan', 'Ação/Ficção científica', 2017),
+('Logan', 'Ação/Ficção científica', '2017'),
 ('Os 101 Dálmatas - O Filme', 'Infantil/Comédia', '1996'),
-('Extraordinário', 'Drama/Infantil', 2017),
+('Extraordinário', 'Drama/Infantil', '2017'),
 ('Divergente', 'Ficção científica/Ação', '2014'),
 ('Como Eu Era Antes de Você', 'Romance/Drama', '2016'),
 ('Shrek', 'Comédia/Fantasia', '2001'),
@@ -43,11 +41,11 @@ INSERT INTO filme (nome, descricao, ano) VALUES
 ('Meu Namorado é um Zumbi', 'Terror/Romance ', '2013'),
 ('Encanto', 'Musical/Infantil', '2021'),
 ('Vingadores: Ultimato', 'Ação/Ficção científica', '2019'),
-('Estrelas Além do Tempo', 'Drama/Ficção histórica', 2016),
+('Estrelas Além do Tempo', 'Drama/Ficção histórica', '2016'),
 ('A Fantástica Fábrica de Chocolate', 'Fantasia/Infantil', '2005'),
-('A Fuga das Galinhas', 'Infantil/Comédia', 2000),
+('A Fuga das Galinhas', 'Infantil/Comédia', '2000'),
 ('Por Água Abaixo', 'Infantil/Comédia', '2006'),
-('Procurando Nemo', 'Infantil/Aventura', 2003),
+('Procurando Nemo', 'Infantil/Aventura', '2003'),
 ('Perdido em Marte', 'Ficção científica/Aventura', '2015'),
 ('O Senhor dos Anéis: A Sociedade do Anel', 'Fantasia/Aventura', '2001'),
 ('High School Musical', 'Musical/Infantil', '2006'),

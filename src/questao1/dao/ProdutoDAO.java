@@ -1,6 +1,7 @@
 package questao1.dao;
 
 import factory.ConnectionFactory;
+import questao1.exception.ManipulacaoInvalida;
 import questao1.modelo.Produto;
 
 import java.sql.Connection;
@@ -83,6 +84,9 @@ public class ProdutoDAO {
             pstm.setDouble(4, produto.getPreco());
 
             pstm.setInt(5, (getUltimoId()-2));
+            if(getUltimoId() == 0){
+                throw new ManipulacaoInvalida("Ainda não há um produto para ser alterado! Tente inserir algo antes!");
+            }
 
             pstm.execute();
             System.out.println("\nAtualização realizada!\n");
@@ -117,6 +121,9 @@ public class ProdutoDAO {
             pstm = conn.prepareStatement(sql);
 
             pstm.setInt(1, (getUltimoId()-1));
+            if(getUltimoId() == 0){
+                throw new ManipulacaoInvalida("Ainda não há um produto para ser removido! Tente inserir algo antes!");
+            }
 
             pstm.execute();
             System.out.println("\nExclução realizada!\n");
